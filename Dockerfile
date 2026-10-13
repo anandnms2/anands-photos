@@ -6,7 +6,7 @@ COPY assets /tmp/brand
 RUN W="$(find /usr/src -maxdepth 4 -type d -name www 2>/dev/null | head -1)"; \
   echo "web dir: $W"; \
   if [ -n "$W" ]; then \
-    for pair in "favicon.ico:favicon.ico" "favicon-16x16.png:icon-16.png" "favicon-32x32.png:icon-32.png" "favicon-48x48.png:icon-48.png" "favicon-96x96.png:icon-192.png"; do \
+    for pair in "favicon.ico:favicon.ico" "favicon-16.png:icon-16.png" "favicon-32.png:icon-32.png" "favicon-48.png:icon-48.png" "favicon-96.png:icon-192.png" "favicon-144.png:icon-192.png" "apple-icon-180.png:icon-180.png"; do \
       t="${pair%%:*}"; s="${pair##*:}"; [ -f "$W/$t" ] && cp "/tmp/brand/$s" "$W/$t"; \
     done; \
     find "$W" -type f \( -name 'apple-icon*.png' -o -name 'apple-touch-icon*.png' \) -exec cp /tmp/brand/icon-180.png {} \; ; \
