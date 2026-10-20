@@ -1,6 +1,6 @@
 # Anands Photos - branding overlay on top of the stock Immich server image.
 # Only static web assets are replaced; database and uploads are untouched.
-ARG IMMICH_VERSION=release
+ARG IMMICH_VERSION=v3.3.3
 FROM ghcr.io/immich-app/immich-server:${IMMICH_VERSION}
 COPY assets /tmp/brand
 RUN W="$(find /usr/src -maxdepth 4 -type d -name www 2>/dev/null | head -1)"; \
